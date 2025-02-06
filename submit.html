@@ -1,0 +1,50 @@
+<!-- submit.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Lyrics</title>
+    <style>
+        .container { max-width: 600px; margin: 50px auto; padding: 20px; }
+        form { display: grid; grid-gap: 15px; }
+        input, textarea { padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Submit New Lyrics</h2>
+        <form id="lyricsForm" onsubmit="return handleSubmit(event)">
+            <input type="text" placeholder="Song Title" required>
+            <input type="text" placeholder="Artist" required>
+            <textarea placeholder="Lyrics" rows="10" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const [title, artist, lyrics] = e.target.elements;
+            
+            // Check if user is logged in (mock check)
+            if (!localStorage.getItem('currentUser')) {
+                alert('Please register/login first!');
+                window.location.href = 'register.html';
+                return false;
+            }
+
+            // Add new song
+            const songs = JSON.parse(localStorage.getItem('songs')) || [];
+            songs.push({
+                title: title.value,
+                artist: artist.value,
+                lyrics: lyrics.value
+            });
+            localStorage.setItem('songs', JSON.stringify(songs));
+            
+            alert('Lyrics submitted successfully!');
+            window.location.href = 'index.html';
+            return false;
+        }
+    </script>
+</body>
+</html>

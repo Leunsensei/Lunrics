@@ -2,11 +2,13 @@ body {
     font-family: "Roboto", "Oswald", serif;
 }
 
+/*nav bar*/
+
 .header {
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    position: relative;
+    position: fixed;
+    z-index: 3;
     top: 0;
     right: 0;
     left: 0;
@@ -45,29 +47,118 @@ body {
     align-items: center;
     color: white;
 }
+
+/*body*/
+
 .body {
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-color: rgb(219, 255, 226);
 }
+
+/*welcome*/
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    font-size: 20px;
+    margin-top: 30px
+}
+
+.heading {
+    font-weight: 500;
+}
+.write-up-1{
+    margin-top: 30px;
+}
+.write-up-2{
+    margin-top: 30px;
+}
+.search-container {
+    margin-top: 30px;
+}
+
+.search-box {
+    height: 35px;
+    width: 300px;
+}
+
+.search-icon {
+    height: 40px;
+}
+.search-title {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+/*top songs*/
+
 .section-titles {
     font-size: 20px;
     font-weight: 500;
     color: rgb(44, 44, 44);
     margin: 30px;
 }
+
+.section-top-songs {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 20px;    
+}
+.artist-list {
+    background-color: rgb(251, 255, 252);
+    width: 300px;
+}
+
+/*top albums*/
+
 .section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 10px;
+    row-gap: 10px; 
     column-gap: 10px;
 }
-.music-items {
-   
+.music-items{
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+.gradient {
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,0), rgba(19, 95, 36, 0.705));
+    height: 150px;
+    width: 150px;
+    z-index: 1;
 }
 .covers {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
+    
+}
+.words {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+.artist-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.artist-profile {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    margin-right: 10px;
 }

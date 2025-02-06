@@ -1,0 +1,25 @@
+<!-- lyrics.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lyrics</title>
+    <style>
+        .container { max-width: 800px; margin: 50px auto; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="songTitle"></h2>
+        <p id="songArtist"></p>
+        <div id="lyricsContent"></div>
+        <button onclick="window.history.back()">Go Back</button>
+    </div>
+
+    <script>
+        const song = JSON.parse(localStorage.getItem('currentLyrics'));
+        document.getElementById('songTitle').textContent = song.title;
+        document.getElementById('songArtist').textContent = `by ${song.artist}`;
+        document.getElementById('lyricsContent').textContent = song.lyrics;
+    </script>
+</body>
+</html>

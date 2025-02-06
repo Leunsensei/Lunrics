@@ -11,60 +11,125 @@
 </head>
 <body>
 <div class="header">
-    <div class="mainheader"><div class="logo">𝄞LUNRICS</div><div class="submit">Submit Lyrics</div></div>
-    <div class="subheader"><div class="sub-items">All Lyrics</div><div class="sub-items">Artists</div>
-                           <div class="sub-items">Genre</div><div class="sub-items">Albums</div>
+    <div class="mainheader"><div class="logo">𝄞LUNRICS</div>
+                            <div><input type="text" placeholder="search" class="search-box">
+                                 <button class="search-icon">search</button></div>
+    </div>
+    <div class="subheader"><div class="sub-items" onclick="displayAllSongs()">All Lyrics</div>
+                            <div class="sub-items">Artists</div>
+                            <div class="sub-items">Genre</div>
+                            <div class="sub-items">Albums</div>
     </div>
 </div>
-<div class="body">
-    <div class="section-titles">TOP LYRICS</div>
+<div class="body" id="body">
+    
+    <div class="welcome">
+        <div class="heading">Welcome to LUNRICS</div>
+        <div class="write-up-1">It's a place where all searches end</div>
+        <div class="write-up-2">We have a large, legal, everyday growing 
+        universe of lyrics where stars of all genres and ages shine.</div>
+        <div>
+            <div class="search-container">
+                <input type="text" placeholder="search" class="search-box">
+                <button class="search-icon">search</button>
+            </div>
+            <div class="search-title">Enter artist name or song title</div>
+        </div>
+    </div>
 
-        <div class="section">
+    
+
+        <div class="section-titles">TOP SONGS</div>
+        <div class="section-top-songs" id="songArtist">
+
+            <div class="artist-list">
+                    Max Tempo - "Song"
+            </div>
+
+            <div class="artist-list">
+                    Max Tempo - "Song"
+            </div>
+
+        </div>
+
+        <div class="section-titles" id="sectionTitles">TOP ALBUMS</div>
+        <div class="section" id="songList">
             
-        <div class="music-items">
-            <img src="Image/001.png" class="covers">
-            <div class="artist-name">Max Tempo</div>
-            <div class="song-title">Song 1</div>
+            <div class="music-items">
+                <div class="gradient"></div>
+                <img src="Image/001.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
+            <div class="music-items" onclick="viewLyrics('Song 1')">
+                <div class="gradient"></div>
+                <img src="Image/003.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
+            <div class="music-items">
+                <div class="gradient"></div>
+                <img src="Image/002.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
+            <div class="music-items">
+                <div class="gradient"></div>
+                <img src="Image/004.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
+            <div class="music-items">
+                <div class="gradient"></div>
+                <img src="Image/005.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
+            <div class="music-items">
+                <div class="gradient"></div>
+                <img src="Image/006.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
+            <div class="music-items">
+                <div class="gradient"></div>
+                <img src="Image/007.png" class="covers">
+                <div class="words">
+                    <div class="artist-name">Max Tempo</div>
+                    <div class="song-title">Song 1</div>
+                </div>
+                
+            </div>
+
         </div>
 
-        <div class="music-items">
-            <img src="Image/003.png" class="covers">
-            <div class="artist-name">Max Tempo</div>
-            <div class="song-title">Song 1</div>
-        </div>
 
-        <div class="music-items">
-            <img src="Image/001.png" class="covers">
-            <div class="artist-name">Max Tempo</div>
-            <div class="song-title">Song 1</div>
-        </div>
 
-        <div class="music-items">
-            <img src="Image/003.png" class="covers">
-            <div class="artist-name">Max Tempo</div>
-            <div class="song-title">Song 1</div>
-        </div>
-
-        <div class="music-items">
-            <img src="Image/001.png" class="covers">
-            <div class="artist-name">Max Tempo</div>
-            <div class="song-title">Song 1</div>
-        </div>
-
-        <div class="music-items">
-            <img src="Image/003.png" class="covers">
-            <div class="artist-name">Max Tempo</div>
-            <div class="song-title">Song 1</div>
-        </div>
-        </div>
-
-    <div class="section-titles">TOP ARTISTS</div>
-
-    <div class="section-titles">TOP ALBUMS</div>
-
-</div>
-
-<footer class="footer"></footer>
+<footer class="footer"><div class="submit" onclick="location.href='submit.html'">Submit Lyrics</div></footer>
 
 <script src="Script/Array.js"></script>
 <script src="Script/Script.js"></script>
