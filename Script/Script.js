@@ -4,46 +4,30 @@ let songs = items;
 
 
 
-/* Display songs
+/* Display songs */
 function displaySongs() {
-const songTopLyrics = document.getElementById('songList');
-const songTopArtists = document.getElementById('songArtist');
-const songTopAlbums = document.getElementById('songAlbum');
 
-const songList = document.getElementById('songList');
-    songList.innerHTML = songs.map(song => `
-        <div class="music-items" onclick="viewLyrics('${song.song}')">
-                <div class="gradient"></div>
-                <img src="Image/${song.id}.png" class="covers">
-                <div class="words">
-                    <div class="artist-name">${song.artist}</div>
-                    <div class="song-title">${song.song}</div>
-                </div>
-                
+    const songList = document.getElementById('songArtist');
+
+    songList.innerHTML = songs
+        .slice(0, 10)
+        .map(song => `
+        <div class="artist-list" onclick="viewLyrics('${song.song}')">
+                    ${song.artist} - "${song.song}"
             </div>
     `).join('');
 
-    const songArtist = document.getElementById('songArtist');
-    songArtist.innerHTML = songs.map(song => `
-        <div class="music-items" onclick="viewLyrics('${song.song}')">
-                <div class="gradient"></div>
-                <img src="Image/${song.id}.png" class="covers">
-                <div class="words">
-                    <div class="artist-name">${song.artist}</div>
-                    <div class="song-title">${song.song}</div>
-                </div>
-                
-            </div>
-    `).join('');
 
     const songAlbum = document.getElementById('songAlbum');
-    songAlbum.innerHTML = songs.map(song => `
-        <div class="music-items" onclick="viewLyrics('${song.song}')">
+
+    const uniqueAlbums = [...new Set(songs.map(song => song.album))];
+    
+    songAlbum.innerHTML = uniqueAlbums.map(album => `
+        <div class="music-items" onclick="viewAlbums('${album}')">
                 <div class="gradient"></div>
-                <img src="Image/${song.id}.png" class="covers">
+                <img src="Image/${album}.png" class="covers">
                 <div class="words">
-                    <div class="artist-name">${song.artist}</div>
-                    <div class="song-title">${song.song}</div>
+                    <div class="artist-name">${album}</div>
                 </div>
                 
             </div>
@@ -51,7 +35,7 @@ const songList = document.getElementById('songList');
 
 
 }
-*/
+
 
 function displayAllSongs() {
     document.getElementById('body').innerHTML = '<div class="section-titles" id="sectionTitles">ALL LYRICS</div>' + 
@@ -78,9 +62,15 @@ function displayArtists() {}
 function displayGenre() {}
 
 function viewLyrics(title) {
-    const song = songs.find(s => s.title === title);
+    const song = songs.find(s => s.song === title);
     localStorage.setItem('currentLyrics', JSON.stringify(song));
     window.location.href = 'lyrics.html';
+}
+
+function viewAlbums(title) {
+    const song = songs.filter(song => song.album === title);
+    localStorage.setItem('currentAlbums', JSON.stringify(song));
+    window.location.href = 'albums.html';
 }
 
 displaySongs();

@@ -1,6 +1,5 @@
-<!-- lyrics.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
-
 </head>
 <body>
-
     <div class="header">
         <div class="mainheader"><div class="logo">𝄞LUNRICS</div>
                                 <div><input type="text" placeholder="search" class="search-box">
@@ -27,21 +24,33 @@
     <div class="body" id="body">
 
 
-    <div class="container">
-        <h2 id="songTitle"></h2>
-        <p id="songArtist"></p>
-        <div id="lyricsContent"></div>
-        <button onclick="window.history.back()">Go Back</button>
-    </div>
+        <div class="section-titles">TOP SONGS</div>
+        <div class="section-top-songs" id="songArtist">
+
+            <div class="artist-list" onclick="viewLyrics('Song 1')">
+                    Max Tempo - "Song"
+            </div>
+
+            <div class="artist-list">
+                    Max Tempo - "Song"
+            </div>
+
+        </div>
 
 
         
     </div>
 
 
-    
+
+
+
+
+
+
 
     <script src="Script/Array.js"></script>
-    <script src="Script/lyrics.js"></script>
+    <script src="Script/albums.js"></script>
+
 </body>
 </html>
